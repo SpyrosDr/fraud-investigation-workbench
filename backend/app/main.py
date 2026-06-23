@@ -2,17 +2,12 @@ from fastapi import FastAPI
 
 from app.schemas.case_schema import CaseInput
 
+
 app = FastAPI(
     title="Aletheia Investigation Workbench",
     description="MVP backend for structured fraud investigation support.",
     version="0.1.0",
 )
-
-
-class CaseInput(BaseModel):
-    context: str
-    description: str
-    evidence_items: Optional[List[str]] = []
 
 
 @app.get("/")
